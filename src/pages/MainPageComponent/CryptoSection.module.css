@@ -36,6 +36,7 @@
     height: 70%;
   }
   .MainPage__CryptoSection h1 {
+    text-align: center;
     font-size: 2rem;
   }
   .MainPage__CryptoSection p {

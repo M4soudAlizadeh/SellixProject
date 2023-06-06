@@ -40,4 +40,8 @@
     width: 25%;
     margin: 15px 0.1rem;
   }
+  .MainPage__PowerSection p {
+    font-size: 1rem;
+    text-align: center;
+  }
 }
