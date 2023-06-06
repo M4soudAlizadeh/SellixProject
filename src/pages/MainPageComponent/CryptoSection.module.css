@@ -1,0 +1,44 @@
+.MainPage__CryptoSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+  width: 100%;
+  height: 70vh;
+}
+.MainPage__CryptoSection h1 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+.MainPage__CryptoSection p {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.MainPage__CryptoSection button {
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: white;
+  border: 1px solid rgba(128, 128, 128, 0.534);
+  margin-top: 1rem;
+}
+.MainPage__CryptoSection button i {
+  margin-left: 0.5rem;
+}
+@media (max-width: 768px) {
+  .MainPage__CryptoSection img {
+    width: 80%;
+    height: 70%;
+  }
+  .MainPage__CryptoSection h1 {
+    font-size: 2rem;
+  }
+  .MainPage__CryptoSection p {
+    font-size: 1rem;
+  }
+}

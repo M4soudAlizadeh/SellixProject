@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Times New Roman", Times, serif;
+}
+
+body {
+  margin: 0;
+  background: rgb(217, 249, 250);
+  background: linear-gradient(
+    259deg,
+    rgba(217, 249, 250, 1) 19%,
+    rgba(249, 217, 245, 1) 41%,
+    rgba(221, 243, 250, 1) 72%,
+    rgba(251, 232, 191, 1) 100%
+  );
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

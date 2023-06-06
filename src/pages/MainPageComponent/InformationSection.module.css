@@ -1,0 +1,75 @@
+.MainPage__InformationSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+}
+.MainPage__InformationSection--detail {
+  border-right: 1px solid rgba(151, 151, 151, 0.288);
+  width: 35%;
+  padding: 0 3rem;
+}
+
+.MainPage__InformationSection--detail_items p {
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+.MainPage__InformationSection--detail_items div button {
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  margin-right: 1rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: black;
+  color: white;
+}
+.MainPage__InformationSection--detail_items-supp {
+  width: 50%;
+  height: 20%;
+  border-radius: 20px;
+  background-color: white;
+  margin-top: 3rem;
+  padding: 10px 20px;
+  text-align: center;
+}
+.MainPage__InformationSection--Links {
+  padding-left: 5rem;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.MainPage__InformationSection--Links div {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+.MainPage__InformationSection--Links div a {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: rgb(61, 61, 61);
+}
+@media (max-width: 965px) {
+  .MainPage__InformationSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  .MainPage__InformationSection--detail {
+    width: 100%;
+    padding: 0 3rem;
+  }
+  .MainPage__InformationSection--Links {
+    padding-left: 5rem;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

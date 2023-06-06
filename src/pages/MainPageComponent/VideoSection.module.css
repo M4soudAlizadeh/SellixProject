@@ -1,0 +1,16 @@
+.MainPage__Video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.MainPage__Video--tag {
+  width: 60%;
+  border-radius: 20px;
+}
+@media (max-width: 965px) {
+  .MainPage__Video--tag {
+    width: 60%;
+    border-radius: 10%;
+  }
+}

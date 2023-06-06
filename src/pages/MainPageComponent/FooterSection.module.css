@@ -1,0 +1,24 @@
+.MainPage__FooterSection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid gray;
+  height: 10vh;
+  color: rgb(85, 85, 85);
+}
+.MainPage__FooterSection div {
+  text-align: right;
+  width: 40%;
+}
+.MainPage__FooterSection div i {
+  margin-left: 1rem;
+}
+@media (max-width: 965px) {
+  .MainPage__FooterSection {
+    flex-direction: column;
+    padding: 3rem 0;
+  }
+  .MainPage__FooterSection div {
+    text-align: center;
+  }
+}

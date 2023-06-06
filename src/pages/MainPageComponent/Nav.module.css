@@ -1,0 +1,54 @@
+.MainPage__Nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem 0 2rem;
+  width: 100%;
+}
+.MainPage__Nav--Items {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  width: 50vw;
+}
+.MainPage__Nav--Items a {
+  text-decoration: none;
+}
+.MainPage__Nav--Items-List {
+  display: flex;
+  list-style: none;
+}
+.MainPage__Nav--Items-List li {
+  margin-left: 1.5rem;
+}
+.MainPage__Nav--btns button {
+  padding: 0.7rem 1rem;
+  border: 0;
+  border-radius: 10px;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 700;
+  background-color: white;
+}
+.MainPage__Nav--btns button i {
+  margin-left: 0.5rem;
+}
+.MainPage__Nav--btns :last-child {
+  background-color: black;
+  color: white;
+}
+.MainPage__Nav--bars {
+  display: none;
+}
+@media (max-width: 965px) {
+  .MainPage__Nav--bars {
+    display: inline-block;
+  }
+  .MainPage__Nav--Items-List {
+    display: none;
+  }
+  .MainPage__Nav--btns {
+    display: none;
+  }
+}
