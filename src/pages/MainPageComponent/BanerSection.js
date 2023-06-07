@@ -21,10 +21,12 @@ const BanerSection = () => {
             Pricing<i className="fa fa-arrow-right"></i>
           </button>
         </div>
-        <span>
-          Excellent
-          <img src={star} alt="score img" />
-        </span>
+        <div className={classes["MainPage__BanerSection--title_rank"]}>
+          <span>
+            Excellent
+            <img src={star} alt="score img" />
+          </span>
+        </div>
       </div>
       <img
         className={classes["MainPage__BanerSection--img_digital"]}

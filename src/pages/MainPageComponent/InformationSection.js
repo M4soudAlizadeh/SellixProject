@@ -43,7 +43,7 @@ const InformationSection = () => {
           <h3>Payments</h3>
           <a href="_">Crypto</a>
           <a href="_">API</a>
-          <a href="_">Documentation</a>
+          <a href="_">Document</a>
         </div>
         <div>
           <h3>Marketing</h3>
@@ -58,7 +58,7 @@ const InformationSection = () => {
           <a href="_">Safety</a>
         </div>
         <div>
-          <h3>Developers</h3>
+          <h3>Develop</h3>
           <a href="_">API</a>
           <a href="_">Embed</a>
           <a href="_">Code</a>
@@ -68,6 +68,12 @@ const InformationSection = () => {
           <a href="_">Tickets</a>
           <a href="_">Advanced Data</a>
           <a href="_">Customer Affiliate</a>
+        </div>
+        <div>
+          <h3>Fraud Shield</h3>
+          <a href="_">Risk</a>
+          <a href="_">Rules</a>
+          <a href="_">Safety</a>
         </div>
       </div>
     </div>

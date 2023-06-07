@@ -1,23 +1,31 @@
 .MainPage__BanerSection {
   display: flex;
-  /* justify-content: space-around; */
+  /* justify-content: center; */
   align-items: center;
+  margin: 0 auto;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  max-width: 1440px;
 }
+
 .MainPage__BanerSection--title {
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 40%;
+  flex-basis: 47%;
   margin-left: 2rem;
+  transform: translateY(-4rem);
 }
 .MainPage__BanerSection--title h1 {
   margin: 0;
-  font-size: 5rem;
+  font-size: 88px;
+  line-height: 108px;
+  font-style: normal;
+  font-weight: 800;
 }
 .MainPage__BanerSection--title p {
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  margin-bottom: 2rem;
 }
 .MainPage__BanerSection--title_btns {
   margin-bottom: 1.5rem;
@@ -46,25 +54,64 @@
 }
 .MainPage__BanerSection--img_digital {
   padding-top: 5rem;
-  height: 130vh;
-  transform: translateX(10rem);
+  height: 53vh;
+  /* transform: translateX(10rem); */
+}
+@media (max-width: 1800px) {
+  .MainPage__BanerSection {
+    overflow: hidden;
+  }
+}
+@media (max-width: 1024px) {
+  .MainPage__BanerSection {
+    /* align-items: start; */
+    height: 760px;
+    padding: 5rem 0;
+  }
+  .MainPage__BanerSection--title {
+    align-items: start;
+  }
+  .MainPage__BanerSection--title h1 {
+    font-size: 70px;
+    line-height: 85px;
+  }
+  .MainPage__BanerSection--img_digital {
+    padding: 0;
+    max-height: 730px;
+    transform: translateY(1rem);
+  }
+  .MainPage__BanerSection--title p {
+    width: 80%;
+    margin-bottom: 2rem;
+    line-height: 32px;
+  }
+  .MainPage__BanerSection--title_rank {
+    margin-top: 2.5rem;
+  }
 }
 @media (max-width: 768px) {
   .MainPage__BanerSection {
     flex-direction: column;
-    justify-content: center;
     text-align: center;
+    height: 60vh;
   }
   .MainPage__BanerSection--title {
-    margin-top: 2rem;
-    padding: 0 1rem 0 1rem;
+    width: 100%;
+    margin: 0;
+    padding: 3rem 0 0 0;
   }
   .MainPage__BanerSection--title h1 {
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: 800;
+    line-height: 48px;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
   }
   .MainPage__BanerSection--title p {
-    font-size: 1.2rem;
+    width: 95%;
+    margin: 0 auto 2rem auto;
+    font-size: 16px;
+    line-height: 24px;
   }
   .MainPage__BanerSection--title_btns button {
     padding: 0.7rem 1rem;
@@ -78,8 +125,27 @@
     color: white;
   }
   .MainPage__BanerSection--img_digital {
-    width: 100vw;
-    height: 70vh;
-    transform: translateX(2rem);
+    width: 110%;
+    transform: translateY(-3rem);
+    padding-left: 3rem;
+  }
+  .MainPage__BanerSection--title_rank {
+    margin-top: 0;
+  }
+  .MainPage__BanerSection--title_btns button {
+    font-size: 14px;
+    line-height: 17px;
+    height: 36px;
+  }
+}
+@media (max-width: 425px) {
+  .MainPage__BanerSection--title p {
+    width: 85%;
+  }
+  .MainPage__BanerSection--img_digital {
+    width: 200%;
+    transform: translateY(-2rem) translateX(12rem);
+    /* padding-left: 3rem; */
+    /* height: 680px; */
   }
 }

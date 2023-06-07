@@ -9,7 +9,6 @@ const CryptoSection = () => {
       <h1>Cryptocurrency Transactions</h1>
       <p>
         Sellix provides you with the latest technologies, offering you a simple
-        <br />
         solution to sell your digital goods with cryptocurrencies
       </p>
       <button>
