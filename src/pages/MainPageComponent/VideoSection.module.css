@@ -13,15 +13,6 @@
   margin: 0 auto;
   border-radius: 20px;
 }
-
-/* @media (max-width: 1px) {
-  .MainPage__Video--tag {
-    width: 35%;
-    height: 100%;
-    margin: 0 auto;
-    border-radius: 20px;
-  }
-} */
 @media (max-width: 1024px) {
   .MainPage__Video {
     height: 393px;
@@ -29,7 +20,6 @@
   }
   .MainPage__Video--tag {
     width: 70%;
-    height: 100%;
   }
 }
 @media (max-width: 768px) {

@@ -38,7 +38,6 @@
 }
 @media (max-width: 1024px) {
   .MainPage__PaymentCrypto {
-    justify-content: center;
     gap: 2rem;
   }
 
@@ -52,7 +51,6 @@
 }
 @media (max-width: 768px) {
   .MainPage__PaymentCrypto {
-    display: flex;
     flex-direction: column;
   }
   .MainPage__PaymentCrypto img {
@@ -90,10 +88,6 @@
   }
 }
 @media (max-width: 425px) {
-  .MainPage__PaymentCrypto {
-    display: flex;
-    flex-direction: column;
-  }
   .MainPage__PaymentCrypto img {
     width: 100%;
     height: auto;

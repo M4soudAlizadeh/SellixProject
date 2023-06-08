@@ -38,7 +38,6 @@
 }
 @media (max-width: 1024px) {
   .MainPage__MarcketCrypto {
-    justify-content: center;
     gap: 2rem;
   }
 
@@ -52,7 +51,6 @@
 }
 @media (max-width: 768px) {
   .MainPage__MarcketCrypto {
-    display: flex;
     flex-direction: column;
   }
   .MainPage__MarcketCrypto img {
@@ -89,10 +87,6 @@
   }
 }
 @media (max-width: 425px) {
-  .MainPage__MarcketCrypto {
-    display: flex;
-    flex-direction: column;
-  }
   .MainPage__MarcketCrypto img {
     width: 100%;
     height: auto;
