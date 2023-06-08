@@ -62,9 +62,21 @@
     overflow: hidden;
   }
 }
+@media (max-width: 1366px) {
+  .MainPage__BanerSection--img_digital {
+    /* padding-top: 5rem; */
+    width: 310%;
+    height: 130vh;
+    /* transform: translateX(10rem); */
+  }
+  .MainPage__BanerSection--title h1 {
+    font-weight: 800;
+    font-size: 88px;
+    line-height: 106px;
+  }
+}
 @media (max-width: 1024px) {
   .MainPage__BanerSection {
-    /* align-items: start; */
     height: 760px;
     padding: 5rem 0;
   }

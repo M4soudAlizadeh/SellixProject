@@ -32,6 +32,7 @@ const BanerSection = () => {
         className={classes["MainPage__BanerSection--img_digital"]}
         src="https://cdn.sellix.io/static/landing/new/main/top-screen.png"
         alt="digital banner"
+        loading="lazy"
       />
     </div>
   );
