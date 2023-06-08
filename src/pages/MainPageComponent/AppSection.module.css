@@ -6,7 +6,7 @@
   height: 60%;
   max-width: 1440px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 10rem auto 0 auto;
 }
 .MainPage__AppSection--title {
   flex-grow: 0;
