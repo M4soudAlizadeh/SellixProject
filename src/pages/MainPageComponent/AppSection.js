@@ -4,10 +4,7 @@ const AppSection = () => {
   return (
     <div className={classes["MainPage__AppSection"]}>
       <div className={classes["MainPage__AppSection--title"]}>
-        <h1>
-          Introducing Sellix Business
-          <br /> for iOS & Android
-        </h1>
+        <h1>Introducing Sellix Business for iOS & Android</h1>
         <p>
           Sellix is now available to be downloaded on mobile devices around the
           world on the App & Play Stores.

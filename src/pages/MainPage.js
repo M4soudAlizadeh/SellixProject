@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import Nav from "../pages/MainPageComponent/Nav";
 import BanerSection from "./MainPageComponent/BanerSection";
 import VideoSection from "./MainPageComponent/VideoSection";
@@ -12,9 +11,10 @@ import AppSection from "./MainPageComponent/AppSection";
 import ReadyToSection from "./MainPageComponent/ReadyToSection";
 import FooterSection from "./MainPageComponent/FooterSection";
 import InformationSection from "./MainPageComponent/InformationSection";
+import classes from "./MainPage.module.css";
 const MainPage = () => {
   return (
-    <Fragment>
+    <div className={classes["MainPage"]}>
       <Nav />
       <BanerSection />
       <VideoSection />
@@ -28,7 +28,7 @@ const MainPage = () => {
       <ReadyToSection />
       <InformationSection />
       <FooterSection />
-    </Fragment>
+    </div>
   );
 };
 export default MainPage;

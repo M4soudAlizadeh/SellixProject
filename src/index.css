@@ -10,14 +10,15 @@ html {
 
 body {
   margin: 0;
-  background: rgb(217, 249, 250);
+  background-color: transparent;
+  /* background: rgb(217, 249, 250);
   background: linear-gradient(
     259deg,
     rgba(217, 249, 250, 1) 19%,
     rgba(249, 217, 245, 1) 41%,
     rgba(221, 243, 250, 1) 72%,
     rgba(251, 232, 191, 1) 100%
-  );
+  ); */
 }
 ::-webkit-scrollbar {
   width: 5px;
