@@ -61,6 +61,7 @@
     margin-top: 2rem;
   }
   .MainPage__PaymentCrypto--title {
+    width: 100%;
     padding: 0 1rem 0 1rem;
   }
   .MainPage__PaymentCrypto--title h1 {
