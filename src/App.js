@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 const App = () => {
   return (
     <Switch>
+      <h1>hello</h1>
       <Route path="/" exact>
         <MainPage />
       </Route>
