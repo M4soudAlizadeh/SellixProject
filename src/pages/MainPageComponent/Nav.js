@@ -1,5 +1,6 @@
 import classes from "./Nav.module.css";
 import "font-awesome/css/font-awesome.min.css";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -40,8 +41,12 @@ const Nav = () => {
           </ul>
         </div>
         <div className={classes["MainPage__Nav--btns"]}>
-          <button>Login</button>
-          <button>
+          <NavLink to="/Login">
+            <button className={classes["MainPage__Nav--btns_white"]}>
+              Login
+            </button>
+          </NavLink>
+          <button className={classes["MainPage__Nav--btns_black"]}>
             Get Started<i className="fa fa-arrow-right"></i>
           </button>
         </div>
