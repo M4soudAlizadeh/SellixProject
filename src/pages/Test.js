@@ -32,7 +32,7 @@ const Test = () => {
     };
     fetchData();
   }, []);
-  const contain = data !== [] ? data : "Nothing";
+  const contain = data !== {} ? data : "Nothing";
 
   return (
     <div className={classes["TestPage__ItemsContainer"]}>
@@ -107,4 +107,5 @@ const Test = () => {
     </div>
   );
 };
+
 export default Test;
