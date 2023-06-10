@@ -60,7 +60,7 @@
 }
 @media (max-width: 425px) {
   .MainPage__CryptoSection {
-    margin-top: 2rem;
+    margin-top: 0;
     height: auto;
   }
   .MainPage__CryptoSection img {

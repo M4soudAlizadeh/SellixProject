@@ -6,8 +6,8 @@ const BanerSection = () => {
     <div className={classes["MainPage__BanerSection"]}>
       <div className={classes["MainPage__BanerSection--title"]}>
         <h1>
-          Digital selling <br />
-          with ease
+          Digital selling
+          <br /> with ease
         </h1>
         <p>
           Sell subscriptions, tokens, serial keys, digital downloads, video

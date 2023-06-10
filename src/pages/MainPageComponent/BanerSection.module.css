@@ -1,6 +1,5 @@
 .MainPage__BanerSection {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   margin: 0 auto;
   width: 100%;
@@ -12,7 +11,6 @@
   flex-shrink: 0;
   flex-basis: 47%;
   margin-left: 2rem;
-  transform: translateY(-4rem);
 }
 .MainPage__BanerSection--title h1 {
   margin: 0;
@@ -54,7 +52,9 @@
 }
 .MainPage__BanerSection--img_digital {
   padding-top: 5rem;
-  height: 53vh;
+  width: 70%;
+  /* height: 100%; */
+  /* max-height: 740px; */
   /* transform: translateX(10rem); */
 }
 @media (max-width: 1800px) {
@@ -62,23 +62,30 @@
     overflow: hidden;
   }
 }
-@media (max-width: 1366px) {
+@media (max-width: 1367px) {
+  .MainPage__BanerSection {
+    align-items: start;
+  }
+  .MainPage__BanerSection--title {
+    padding-top: 8rem;
+    flex-basis: 45%;
+    margin-left: 1rem;
+  }
   .MainPage__BanerSection--img_digital {
-    /* padding-top: 5rem; */
-    width: 310%;
-    height: 130vh;
-    /* transform: translateX(10rem); */
+    width: 75%;
   }
   .MainPage__BanerSection--title h1 {
     font-weight: 800;
     font-size: 88px;
     line-height: 106px;
   }
+  .MainPage__BanerSection--title p {
+    width: 80%;
+  }
 }
 @media (max-width: 1024px) {
   .MainPage__BanerSection {
-    height: 760px;
-    padding: 5rem 0;
+    padding: 5rem 0 2rem 0;
   }
   .MainPage__BanerSection--title {
     align-items: start;
@@ -90,7 +97,6 @@
   .MainPage__BanerSection--img_digital {
     padding: 0;
     max-height: 730px;
-    transform: translateY(1rem);
   }
   .MainPage__BanerSection--title p {
     width: 80%;
@@ -105,12 +111,12 @@
   .MainPage__BanerSection {
     flex-direction: column;
     text-align: center;
-    height: 60vh;
+    width: 100%;
   }
   .MainPage__BanerSection--title {
+    padding-top: 0;
     width: 100%;
     margin: 0;
-    padding: 3rem 0 0 0;
   }
   .MainPage__BanerSection--title h1 {
     font-size: 40px;
@@ -138,8 +144,8 @@
   }
   .MainPage__BanerSection--img_digital {
     width: 110%;
-    transform: translateY(-3rem);
-    padding-left: 3rem;
+    max-height: 600px;
+    padding: 2rem 0 0 3rem;
   }
   .MainPage__BanerSection--title_rank {
     margin-top: 0;
@@ -151,13 +157,13 @@
   }
 }
 @media (max-width: 425px) {
+  .MainPage__BanerSection {
+    padding-bottom: 0;
+  }
   .MainPage__BanerSection--title p {
     width: 85%;
   }
   .MainPage__BanerSection--img_digital {
     width: 200%;
-    transform: translateY(-2rem) translateX(12rem);
-    /* padding-left: 3rem; */
-    /* height: 680px; */
   }
 }
