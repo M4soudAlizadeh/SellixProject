@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import classes from "./Test.module.css";
+import SellixClient from "../utils/SellixClient";
 
 const Test = () => {
   const [data, setData] = useState({});
@@ -33,6 +34,8 @@ const Test = () => {
     fetchData();
   }, []);
   const contain = data !== {} ? data : "Nothing";
+  console.log(SellixClient(2).increment(5, 6));
+  console.log(SellixClient(2).decrement(10, 5));
 
   return (
     <div className={classes["TestPage__ItemsContainer"]}>
