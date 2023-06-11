@@ -6,11 +6,13 @@ const Test = () => {
   const [reqPhoto, setReqPhoto] = useState({});
   const [reqUser, setReqUser] = useState({});
   const [reqComments, setReqComments] = useState({});
+
   useEffect(() => {
     SellixClient("GET", "photos").get(setReqPhoto);
     SellixClient("GET", "users").get(setReqUser);
     SellixClient("GET", "comments").get(setReqComments);
   }, []);
+
   const numbersArray = Array.from({ length: 10 }, (_, i) => i + 1);
   const contain = numbersArray.map((_, i) => {
     const obj = {
