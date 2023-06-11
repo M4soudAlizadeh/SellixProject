@@ -5,7 +5,6 @@ import { Fragment } from "react/cjs/react.production.min";
 
 const Test = () => {
   const count = useRef(1);
-  const content = count.current;
   const [reqPhoto, setReqPhoto] = useState({});
   const [reqUser, setReqUser] = useState({});
   const [reqComments, setReqComments] = useState({});
@@ -34,9 +33,9 @@ const Test = () => {
     return containe.slice(start, end);
   };
   const clickPageHandle = () => {
-    setPage(content);
+    setPage(+count.current.textContent);
   };
-  console.log(content);
+  // console.log(+count.current.textContent);
   const contain = containee(page);
   return (
     <Fragment>
