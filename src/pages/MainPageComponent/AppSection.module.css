@@ -22,7 +22,6 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 28px;
-  font-size: 1.3rem;
 }
 .MainPage__AppSection--title_btns {
   margin-bottom: 1.5rem;
@@ -48,9 +47,8 @@
 }
 
 .MainPage__AppSection--img_digital {
-  padding-top: 5rem;
+  padding-top: 15rem;
   width: 40%;
-  transform: translateY(7rem);
 }
 @media (max-width: 1366px) {
   .MainPage__AppSection {
@@ -68,23 +66,31 @@
 }
 @media (max-width: 1024px) {
   .MainPage__AppSection {
-    height: 70%;
+    justify-content: space-between;
+    height: 90%;
   }
   .MainPage__AppSection--title {
     flex-basis: 40%;
+    padding: 0 1rem;
   }
   .MainPage__AppSection--img_digital {
-    transform: translateY(0);
+    width: 40%;
+    padding: 0 1rem 0 0;
+  }
+  .MainPage__AppSection--title h1 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 48px;
   }
 }
 @media (max-width: 768px) {
   .MainPage__AppSection {
     flex-direction: column;
-    height: 45%;
+    height: 70%;
   }
   .MainPage__AppSection--title {
     width: 90%;
-    padding-top: 15rem;
+    padding: 0;
   }
   .MainPage__AppSection--title p {
     font-weight: 400;
@@ -108,7 +114,7 @@
 }
 @media (max-width: 320px) {
   .MainPage__AppSection {
-    height: 60%;
+    height: 100%;
   }
   .MainPage__AppSection--img_digital {
     width: 90%;

@@ -12,7 +12,7 @@ const Test = () => {
     SellixClient("GET", "comments").get(setReqComments);
   }, []);
   const numbersArray = Array.from({ length: 10 }, (_, i) => i + 1);
-  const contain = numbersArray.map((e, i) => {
+  const contain = numbersArray.map((_, i) => {
     const obj = {
       Key: reqUser[i]?.username + reqUser[i]?.name + Math.random(),
       Title: reqUser[i]?.name,
