@@ -1,12 +1,21 @@
-const SellixClient = (d) => {
-  const increment = (a, b) => {
-    return a + b / d;
+const api = "https://jsonplaceholder.typicode.com/";
+const SellixClient = (req = "GET", key) => {
+  const get = async (set) => {
+    const getRes = await fetch(api + key, {
+      Method: req,
+      Headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+    });
+    const getData = await getRes.json();
+    set(getData);
   };
 
-  const decrement = (a, b) => {
-    return a - b / d;
-  };
+  // const send = (a, b) => {
+  //   return a - b / d;
+  // };
 
-  return { increment, decrement };
+  return { get };
 };
 export default SellixClient;

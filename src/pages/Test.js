@@ -1,42 +1,25 @@
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect } from "react";
 import classes from "./Test.module.css";
 import SellixClient from "../utils/SellixClient";
 
 const Test = () => {
-  const [data, setData] = useState({});
+  const [reqPhoto, setReqPhoto] = useState({});
+  const [reqUser, setReqUser] = useState({});
+  const [reqComments, setReqComments] = useState({});
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const resTitle = await fetch(
-          "https://jsonplaceholder.typicode.com/users/1"
-        );
-        const dataTitle = await resTitle.json();
-        const resDes = await fetch(
-          "https://jsonplaceholder.typicode.com/comments/1"
-        );
-        const dataDes = await resDes.json();
-        const resPhoto = await fetch(
-          "https://jsonplaceholder.typicode.com/photos/1"
-        );
-        const dataPhoto = await resPhoto.json();
-
-        setData({
-          Title: dataTitle.name,
-          UserName: dataTitle.username,
-          Des: dataDes.body,
-          Photo: dataPhoto.url,
-          UserIcon: dataPhoto.thumbnailUrl,
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchData();
+    SellixClient("GET", "photos/1").get(setReqPhoto);
+    SellixClient("GET", "users/1").get(setReqUser);
+    SellixClient("GET", "comments/1").get(setReqComments);
   }, []);
-  const contain = data !== {} ? data : "Nothing";
-  console.log(SellixClient(2).increment(5, 6));
-  console.log(SellixClient(2).decrement(10, 5));
 
+  const contain = {
+    Title: reqUser.name,
+    UserName: reqUser.username,
+    Des: reqComments.body,
+    Photo: reqPhoto.url,
+    UserIcon: reqPhoto.thumbnailUrl,
+  };
   return (
     <div className={classes["TestPage__ItemsContainer"]}>
       <div className={classes["TestPage__PostContainer"]}>
@@ -112,3 +95,35 @@ const Test = () => {
 };
 
 export default Test;
+
+// const [data, setData] = useState({});
+// useEffect(() => {
+//   const fetchData = async () => {
+//     try {
+//       const resTitle = await fetch(
+//         "https://jsonplaceholder.typicode.com/users/1"
+//       );
+//       const dataTitle = await resTitle.json();
+//       const resDes = await fetch(
+//         "https://jsonplaceholder.typicode.com/comments/1"
+//       );
+//       const dataDes = await resDes.json();
+//       const resPhoto = await fetch(
+//         "https://jsonplaceholder.typicode.com/photos/1"
+//       );
+//       const dataPhoto = await resPhoto.json();
+
+//       setData({
+//         Title: dataTitle.name,
+//         UserName: dataTitle.username,
+//         Des: dataDes.body,
+//         Photo: dataPhoto.url,
+//         UserIcon: dataPhoto.thumbnailUrl,
+//       });
+//     } catch (err) {
+//       console.log(err);
+//     }
+//   };
+//   fetchData();
+// }, []);
+// const contain = data !== {} ? data : "Nothing";
