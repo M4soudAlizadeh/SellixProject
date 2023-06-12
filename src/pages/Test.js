@@ -1,19 +1,45 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import classes from "./Test.module.css";
 import SellixClient from "../utils/SellixClient";
 import { Fragment } from "react/cjs/react.production.min";
 
 const Test = () => {
-  const count = useRef(1);
+  // start state for data http
   const [reqPhoto, setReqPhoto] = useState({});
   const [reqUser, setReqUser] = useState({});
   const [reqComments, setReqComments] = useState({});
-  const [page, setPage] = useState(1);
+  // start state for data http
+
+  // start state and handle functions btns paginations
+  const [btnNextPage, setBtnNextPage] = useState(2);
+  const [btnPrevPage, setBtnPrevPage] = useState(0);
+  const clickNextPageHandle = () => {
+    setBtnNextPage((PrevBtnNextPage) => PrevBtnNextPage + 1);
+    setBtnPrevPage((PrevBtnPrevPage) => PrevBtnPrevPage + 1);
+  };
+  const clickPrevPageHandle = () => {
+    setBtnNextPage((PrevBtnNextPage) => PrevBtnNextPage - 1);
+    setBtnPrevPage((PrevBtnPrevPage) => PrevBtnPrevPage - 1);
+  };
+  // end btns paginations
+
+  // start get data with component function
   useEffect(() => {
-    SellixClient("GET", "photos").get(setReqPhoto);
-    SellixClient("GET", "users").get(setReqUser);
-    SellixClient("GET", "comments").get(setReqComments);
+    const httpHeaders = {
+      method: "",
+      headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+      body: "",
+      // url: "",
+      // function: "",
+    };
+    SellixClient(httpHeaders, "photos").sendRequest(setReqPhoto);
+    SellixClient(httpHeaders, "users").sendRequest(setReqUser);
+    SellixClient(httpHeaders, "comments").sendRequest(setReqComments);
   }, []);
+
   const numbersArray = Array.from({ length: 20 }, (_, i) => i + 1);
   const containe = numbersArray.map((_, i) => {
     const obj = {
@@ -26,37 +52,49 @@ const Test = () => {
     };
     return obj;
   });
+  // end get data with component function
+
+  // start load data in pages
   const containee = (page = 1) => {
-    const start = (page - 1) * 10;
-    const end = page * 10;
-    console.log(containe.slice(start, end));
+    const start = (page - 1) * 5;
+    const end = page * 5;
     return containe.slice(start, end);
   };
-  const clickPageHandle = () => {
-    setPage(+count.current.textContent);
-  };
-  // console.log(+count.current.textContent);
-  const contain = containee(page);
+  const contain = containee(btnNextPage - 1);
+  // end load data in pages
+
   return (
     <Fragment>
-      <div>
-        <div>
-          <button onClick={clickPageHandle}>
-            <div>
-              <i className="fa fa-arrow-right"></i>
-              <span ref={count}>2</span>
-            </div>
-          </button>
-        </div>
-        <div>
-          <button>
-            <div>
-              <i className="fa fa-arrow-left"></i>
-              <span>1</span>
-            </div>
-          </button>
-        </div>
+      {/* start Pagination */}
+      <div className={classes["pagination_container"]}>
+        {btnPrevPage === 0 ? (
+          ""
+        ) : (
+          <div>
+            <button onClick={clickPrevPageHandle}>
+              <div>
+                <i className="fa fa-arrow-left"></i>
+                <span>{btnPrevPage}</span>
+              </div>
+            </button>
+          </div>
+        )}
+        <span>{btnNextPage - 1}</span>
+        {btnNextPage === 5 ? (
+          ""
+        ) : (
+          <div>
+            <button onClick={clickNextPageHandle}>
+              <div>
+                <span>{btnNextPage}</span>
+                <i className="fa fa-arrow-right"></i>
+              </div>
+            </button>
+          </div>
+        )}
       </div>
+      {/* end Pagination */}
+      {/* start posts container */}
       <div className={classes["TestPage__ItemsContainer"]}>
         {contain.map((item, _) => {
           return (
@@ -133,6 +171,7 @@ const Test = () => {
           );
         })}
       </div>
+      {/* end posts container */}
     </Fragment>
   );
 };

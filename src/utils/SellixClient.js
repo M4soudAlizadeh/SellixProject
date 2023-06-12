@@ -1,17 +1,21 @@
-const api = "https://jsonplaceholder.typicode.com/";
-const SellixClient = (req = "GET", key, bod = null) => {
-  const get = async (set) => {
-    const getRes = await fetch(api + key, {
-      Method: req,
-      Headers: {
-        Accept: "application.json",
-        "Content-Type": "application/json",
-      },
-      body: bod === null ? null : bod,
-    });
-    const getData = await getRes.json();
-    set(getData);
+const Base_Url = "https://jsonplaceholder.typicode.com/";
+const SellixClient = (httpHeaders, url) => {
+  const sendRequest = async (set) => {
+    try {
+      const getRes = await fetch(Base_Url + url, {
+        Method: httpHeaders.method ? httpHeaders.method : "GET",
+        Headers: httpHeaders.headers ? httpHeaders.headers : {},
+        body: httpHeaders.body ? JSON.stringify(httpHeaders.body) : null,
+      });
+      if (!getRes.ok) {
+        throw new Error("Request Failed");
+      }
+      const getData = await getRes.json();
+      set(getData);
+    } catch (err) {
+      console.log(err.message || "Somthing went wrong");
+    }
   };
-  return { get };
+  return { sendRequest };
 };
 export default SellixClient;
