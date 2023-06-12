@@ -7,9 +7,13 @@ const SellixClient = (httpHeaders, url) => {
         Headers: httpHeaders.headers ? httpHeaders.headers : {},
         body: httpHeaders.body ? JSON.stringify(httpHeaders.body) : null,
       });
+
+      // start handle Error
       if (!getRes.ok) {
         throw new Error("Request Failed");
       }
+      // end handle Error
+
       const getData = await getRes.json();
       set(getData);
     } catch (err) {
