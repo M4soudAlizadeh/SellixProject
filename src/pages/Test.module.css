@@ -6,6 +6,14 @@
   text-align: center;
   margin: 1rem auto;
 }
+.loading_container {
+  width: 100%;
+  text-align: center;
+}
+.loading_container span {
+  font-size: 45px;
+  font-weight: 600;
+}
 .TestPage__ItemsContainer {
   height: auto;
   display: flex;

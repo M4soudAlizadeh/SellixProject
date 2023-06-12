@@ -4,13 +4,17 @@ import SellixClient from "../utils/SellixClient";
 import { Fragment } from "react/cjs/react.production.min";
 
 const Test = () => {
-  // start state for data http
+  // start Loading state
+  const [isLoading, setIsLoading] = useState(true);
+  // end Loading state
+
+  // start states for data http
   const [reqPhoto, setReqPhoto] = useState({});
   const [reqUser, setReqUser] = useState({});
   const [reqComments, setReqComments] = useState({});
-  // start state for data http
+  // end states for data http
 
-  // start state and handle functions btns paginations
+  // start state and handle functions for btns paginations
   const [btnNextPage, setBtnNextPage] = useState(2);
   const [btnPrevPage, setBtnPrevPage] = useState(0);
   const clickNextPageHandle = () => {
@@ -21,10 +25,11 @@ const Test = () => {
     setBtnNextPage((PrevBtnNextPage) => PrevBtnNextPage - 1);
     setBtnPrevPage((PrevBtnPrevPage) => PrevBtnPrevPage - 1);
   };
-  // end btns paginations
+  // end state and handle functions for btns paginations
 
-  // start get data with component function
+  // start get data with SellixClient component function and store that and set isLoading
   useEffect(() => {
+    setIsLoading(true);
     const httpHeaders = {
       method: "",
       headers: {
@@ -38,6 +43,7 @@ const Test = () => {
     SellixClient(httpHeaders, "photos").sendRequest(setReqPhoto);
     SellixClient(httpHeaders, "users").sendRequest(setReqUser);
     SellixClient(httpHeaders, "comments").sendRequest(setReqComments);
+    setIsLoading(false);
   }, []);
 
   const numbersArray = Array.from({ length: 20 }, (_, i) => i + 1);
@@ -52,7 +58,7 @@ const Test = () => {
     };
     return obj;
   });
-  // end get data with component function
+  // end get data with SellixClient component function and store that and set isLoading
 
   // start load data in pages
   const containee = (page = 1) => {
@@ -65,7 +71,7 @@ const Test = () => {
 
   return (
     <Fragment>
-      {/* start Pagination */}
+      {/* start Pagination btns*/}
       <div className={classes["pagination_container"]}>
         {btnPrevPage === 0 ? (
           ""
@@ -93,85 +99,97 @@ const Test = () => {
           </div>
         )}
       </div>
-      {/* end Pagination */}
-      {/* start posts container */}
-      <div className={classes["TestPage__ItemsContainer"]}>
-        {contain.map((item, _) => {
-          return (
-            <div className={classes["TestPage__PostContainer"]}>
-              <div className={classes["TestPage__PostContainer-head"]}>
-                <div className={classes["TestPage__PostContainer-head_items"]}>
+      {/* end Pagination btns */}
+      {/* start Loading and posts container */}
+      {isLoading ? (
+        <div className={classes["loading_container"]}>
+          <span>Loading ...</span>
+        </div>
+      ) : (
+        <div className={classes["TestPage__ItemsContainer"]}>
+          {contain.map((item, _) => {
+            return (
+              <div className={classes["TestPage__PostContainer"]}>
+                <div className={classes["TestPage__PostContainer-head"]}>
                   <div
-                    className={
-                      classes["TestPage__PostContainer-head_items--detailuser"]
-                    }
+                    className={classes["TestPage__PostContainer-head_items"]}
                   >
-                    <img src={item.UserIcon} alt="user icon" />
-                    <div>
-                      <span
-                        className={
-                          classes[
-                            "TestPage__PostContainer-head_items--detailuser_title"
-                          ]
-                        }
-                      >
-                        {item.Title}
-                      </span>
-                      <span>{"@" + item.UserName}</span>
-                      <span>July 23</span>
+                    <div
+                      className={
+                        classes[
+                          "TestPage__PostContainer-head_items--detailuser"
+                        ]
+                      }
+                    >
+                      <img src={item.UserIcon} alt="user icon" />
+                      <div>
+                        <span
+                          className={
+                            classes[
+                              "TestPage__PostContainer-head_items--detailuser_title"
+                            ]
+                          }
+                        >
+                          {item.Title}
+                        </span>
+                        <span>{"@" + item.UserName}</span>
+                        <span>July 23</span>
+                      </div>
                     </div>
+                    <div>
+                      <a href="_">
+                        <i class="fa fa-ellipsis-v"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <span
+                  className={classes["TestPage__PostContainer-description"]}
+                >
+                  {item.Des}
+                </span>
+                <div className={classes["TestPage__PostContainer-MainImage"]}>
+                  <img src={item.Photo} alt={item.Title} />
+                </div>
+                <div
+                  className={classes["TestPage__PostContainer-LinksContainer"]}
+                >
+                  <div>
+                    <a href="_">
+                      <i className="fa fa-comment"></i>
+                    </a>
+                    <span>200</span>
                   </div>
                   <div>
                     <a href="_">
-                      <i class="fa fa-ellipsis-v"></i>
+                      <i class="fa fa-refresh"></i>
+                    </a>
+                    <span>20</span>
+                  </div>
+                  <div>
+                    <a href="_">
+                      <i class="fa fa-heart"></i>
+                    </a>
+                    <span>4k</span>
+                  </div>
+                  <div>
+                    <a href="_">
+                      <i class="fa fa-bar-chart"></i>
+                    </a>
+                    <span>890</span>
+                  </div>
+                  <div>
+                    <a href="_">
+                      <i class="fa fa-upload"></i>
                     </a>
                   </div>
                 </div>
               </div>
-              <span className={classes["TestPage__PostContainer-description"]}>
-                {item.Des}
-              </span>
-              <div className={classes["TestPage__PostContainer-MainImage"]}>
-                <img src={item.Photo} alt={item.Title} />
-              </div>
-              <div
-                className={classes["TestPage__PostContainer-LinksContainer"]}
-              >
-                <div>
-                  <a href="_">
-                    <i className="fa fa-comment"></i>
-                  </a>
-                  <span>200</span>
-                </div>
-                <div>
-                  <a href="_">
-                    <i class="fa fa-refresh"></i>
-                  </a>
-                  <span>20</span>
-                </div>
-                <div>
-                  <a href="_">
-                    <i class="fa fa-heart"></i>
-                  </a>
-                  <span>4k</span>
-                </div>
-                <div>
-                  <a href="_">
-                    <i class="fa fa-bar-chart"></i>
-                  </a>
-                  <span>890</span>
-                </div>
-                <div>
-                  <a href="_">
-                    <i class="fa fa-upload"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      {/* end posts container */}
+            );
+          })}
+        </div>
+      )}
+      {/* end Loading and posts container */}
     </Fragment>
   );
 };
